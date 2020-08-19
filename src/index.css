@@ -36,9 +36,10 @@ code {
 
   background-color: #e6f080;
 
-  box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 1px 0px 0px rgba(0, 0, 0, 0.75);
 
-  transform: rotate(7deg);
+  transform: rotate(-4deg);
+  transition: all 0.1s ease-in-out;
 }
 
 .stickyNote {
@@ -63,16 +64,23 @@ code {
 
   background-color: #ffffff;
 
-  box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 1px 0px 0px rgba(0, 0, 0, 0.75);
 
-  transform: rotate(7deg);
+  transform: rotate(-4deg);
+  transition: all 0.1s ease-in-out;
+
+  box-sizing: border-box;
 }
 
-.instantPhoto .instantPhotoImage {
-  margin: 7% 5% 5% 5%;
+.instantPhoto .instantPhotoImageWrapper {
+  padding: 7% 5% 5% 5%;
   width: 90%;
   height: 80%;
+}
 
+.instantPhoto .instantPhotoImageWrapper .instantPhotoImage {
+  width: 100%;
+  height: 100%;
   background-color: #383838;
 }
 
@@ -85,9 +93,10 @@ code {
 
   background-color: #ffffff;
 
-  box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 1px 0px 0px rgba(0, 0, 0, 0.75);
 
-  transform: rotate(7deg);
+  transform: rotate(-4deg);
+  transition: all 0.1s ease-in-out;
 }
 
 .emptyPage {
@@ -113,4 +122,10 @@ code {
   color: rgba(255, 255, 255, 0.75);
 
   transform: rotate(7deg);
+}
+
+.react-draggable-dragging > div {
+  transform: scale(1.1);
+  cursor: grabbing;
+  box-shadow: -4px 4px 3px 2px rgba(0, 0, 0, 0.75);
 }

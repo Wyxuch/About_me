@@ -1,7 +1,14 @@
 import React from "react";
+import Draggable from "react-draggable";
 
 const StickyNote = ({ text }) => {
-  return <div className="stickyNote"></div>;
+  return (
+    <Draggable>
+      <div>
+        <div className="stickyNote"></div>
+      </div>
+    </Draggable>
+  );
 };
 
 export default StickyNote;
