@@ -3,11 +3,19 @@
   src: url("./public/PermanentMarker-Regular.ttf");
 }
 
+@font-face {
+  font-family: handWritingBold;
+  src: url("./public/Caveat-Bold.ttf");
+}
+
+@font-face {
+  font-family: handWriting;
+  src: url("./public/Caveat-Regular.ttf");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: handWriting, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("./background.jpg");
@@ -23,12 +31,10 @@ code {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: baseline;
   justify-content: space-evenly;
 }
 
 .stickyNote {
-  display: block;
   position: relative;
 
   width: 25vw;
@@ -40,6 +46,10 @@ code {
 
   transform: rotate(-4deg);
   transition: all 0.1s ease-in-out;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .stickyNote {
@@ -53,6 +63,11 @@ code {
   background-size: 55px 55px, 0 0, 0 0, 100% 100%;
   background-position: 100% 0, 0 0, 100% 100%, 100% 0;
   background-repeat: no-repeat;
+}
+
+.stickyNote h1 {
+  text-align: center;
+  font-family: handWritingBold;
 }
 
 .instantPhoto {

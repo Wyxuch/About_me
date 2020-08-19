@@ -5,7 +5,9 @@ const StickyNote = ({ text }) => {
   return (
     <Draggable>
       <div>
-        <div className="stickyNote"></div>
+        <div className="stickyNote">
+          <p>{text}</p>
+        </div>
       </div>
     </Draggable>
   );

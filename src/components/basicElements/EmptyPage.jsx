@@ -3,12 +3,9 @@ import Draggable from "react-draggable";
 
 const EmptyPage = ({ content }) => {
   return (
-    <Draggable
-      onStart={console.log("started")}
-      onDrag={console.log("dragging")}
-    >
+    <Draggable>
       <div>
-        <div className="emptyPage"></div>
+        <div className="emptyPage">{content}</div>
       </div>
     </Draggable>
   );
