@@ -1,3 +1,12 @@
-import { combineReducers } from "redux";
+const initialState = {
+  test: true,
+};
 
-export default combineReducers({});
+const store = (state = initialState, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
+
+export default store;

@@ -1,7 +1,15 @@
 import React from "react";
 
-const Marker = ({ text }) => {
-  return <p className="marker">Something to write :)</p>;
+const Marker = ({ content, tilt }) => {
+  const styles = {
+    transform: `rotate(${tilt}deg)`,
+  };
+
+  return (
+    <p className="marker" style={styles}>
+      {content}
+    </p>
+  );
 };
 
 export default Marker;

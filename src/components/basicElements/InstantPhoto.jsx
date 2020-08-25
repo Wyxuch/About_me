@@ -1,11 +1,15 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-const InstantPhoto = ({ image, text }) => {
+const InstantPhoto = ({ image, text, tilt }) => {
+  const styles = {
+    transform: `rotate(${tilt}deg)`,
+  };
+
   return (
     <Draggable>
       <div>
-        <div className="instantPhoto">
+        <div className="instantPhoto" style={styles}>
           <div className="instantPhotoImageWrapper">
             <div className="instantPhotoImage"></div>
           </div>

@@ -33,7 +33,7 @@ html {
 // ***DEFAULT***
 
 .react-draggable-dragging > div {
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
   cursor: grabbing;
   box-shadow: -4px 4px 3px 2px rgba(0, 0, 0, 0.75);
 }
@@ -71,6 +71,14 @@ body {
   margin: 2%;
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.flexWrapperVertical {
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-evenly;
 }
