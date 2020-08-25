@@ -38,6 +38,10 @@ html {
   box-shadow: -4px 4px 3px 2px rgba(0, 0, 0, 0.75);
 }
 
+.elementWrapper {
+  pointer-events: none;
+}
+
 h1 {
   text-align: center;
 }

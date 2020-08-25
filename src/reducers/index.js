@@ -16,13 +16,10 @@ const store = (state = initialState, action) => {
 export default store;
 
 const updateIndex = (state, action) => {
-  console.log(action);
   const nextState = { ...state };
   const classes = action.classList.split(" ");
   classes.forEach((el) => {
-    console.log(nextState.zIndexList[el]);
     if (nextState.zIndexList[el]) {
-      console.log(nextState.zIndexList[el]);
       //finds highest z-index
       const highestZIndexKey = Object.keys(
         nextState.zIndexList

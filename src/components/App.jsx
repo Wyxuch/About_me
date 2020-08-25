@@ -11,6 +11,10 @@ import constants from "../constats";
 const App = () => {
   const dispatch = useDispatch();
 
+  document.addEventListener("click", (e) => {
+    console.log(e.target);
+  });
+
   window.addEventListener("DOMContentLoaded", (event) => {
     dispatch(initZIndex(document.getElementsByClassName("react-draggable")));
   });

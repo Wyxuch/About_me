@@ -14,7 +14,7 @@ const StickyNote = ({ text, tilt, margin, setIndex }) => {
   };
 
   return (
-    <div style={parentMargin}>
+    <div style={parentMargin} className="elementWrapper">
       <Draggable>
         <div>
           <div

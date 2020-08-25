@@ -14,7 +14,7 @@ const InstantPhoto = ({ image, text, tilt, margin }) => {
   };
 
   return (
-    <div style={parentMargin}>
+    <div style={parentMargin} className="elementWrapper">
       <Draggable>
         <div>
           <div className="instantPhoto" style={styles}>
