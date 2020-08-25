@@ -1,7 +1,10 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-const StickyNote = ({ text, tilt }) => {
+const StickyNote = ({ text, tilt, margin }) => {
+  margin ? (margin = margin) : (margin = [0, 0, 0, 0]);
+  tilt ? (tilt = tilt) : (tilt = 0);
+
   const styles = {
     transform: `rotate(${tilt}deg)`,
   };
@@ -10,7 +13,7 @@ const StickyNote = ({ text, tilt }) => {
     <Draggable>
       <div>
         <div className="stickyNote" style={styles}>
-          <p>{text}</p>
+          {text}
         </div>
       </div>
     </Draggable>

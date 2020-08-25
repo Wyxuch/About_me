@@ -1,10 +1,16 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-const EmptyPage = ({ content, tilt }) => {
+const EmptyPage = ({ content, tilt, margin }) => {
+  margin ? (margin = margin) : (margin = [0, 0, 0, 0]);
+  tilt ? (tilt = tilt) : (tilt = 0);
+
   const styles = {
     transform: `rotate(${tilt}deg)`,
+    margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,
   };
+
+  console.log(margin);
 
   return (
     <Draggable>

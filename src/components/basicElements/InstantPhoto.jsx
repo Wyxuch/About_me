@@ -1,7 +1,10 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-const InstantPhoto = ({ image, text, tilt }) => {
+const InstantPhoto = ({ image, text, tilt, margin }) => {
+  margin ? (margin = margin) : (margin = [0, 0, 0, 0]);
+  tilt ? (tilt = tilt) : (tilt = 0);
+
   const styles = {
     transform: `rotate(${tilt}deg)`,
   };
