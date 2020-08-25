@@ -73,6 +73,7 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 .flexWrapperVertical {
@@ -81,6 +82,7 @@ body {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 // ***WEBSITE COMPONENTS***
@@ -90,6 +92,7 @@ body {
 
   width: 25vw;
   height: 25vw;
+  box-sizing: border-box;
 
   background-color: #e6f080;
 

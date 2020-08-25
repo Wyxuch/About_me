@@ -7,19 +7,22 @@ const EmptyPage = ({ content, tilt, margin }) => {
 
   const styles = {
     transform: `rotate(${tilt}deg)`,
+  };
+
+  const parentMargin = {
     margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,
   };
 
-  console.log(margin);
-
   return (
-    <Draggable>
-      <div>
-        <div className="emptyPage" style={styles}>
-          {content}
+    <div style={parentMargin}>
+      <Draggable>
+        <div>
+          <div className="emptyPage" style={styles}>
+            {content}
+          </div>
         </div>
-      </div>
-    </Draggable>
+      </Draggable>
+    </div>
   );
 };
 

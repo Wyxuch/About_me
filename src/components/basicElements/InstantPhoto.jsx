@@ -9,17 +9,23 @@ const InstantPhoto = ({ image, text, tilt, margin }) => {
     transform: `rotate(${tilt}deg)`,
   };
 
+  const parentMargin = {
+    margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,
+  };
+
   return (
-    <Draggable>
-      <div>
-        <div className="instantPhoto" style={styles}>
-          <div className="instantPhotoImageWrapper">
-            <div className="instantPhotoImage"></div>
+    <div style={parentMargin}>
+      <Draggable>
+        <div>
+          <div className="instantPhoto" style={styles}>
+            <div className="instantPhotoImageWrapper">
+              <div className="instantPhotoImage"></div>
+            </div>
+            <p className="instantPhotoText"></p>
           </div>
-          <p className="instantPhotoText"></p>
         </div>
-      </div>
-    </Draggable>
+      </Draggable>
+    </div>
   );
 };
 

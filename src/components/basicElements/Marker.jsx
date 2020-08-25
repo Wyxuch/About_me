@@ -8,10 +8,16 @@ const Marker = ({ content, tilt, margin }) => {
     transform: `rotate(${tilt}deg)`,
   };
 
+  const parentMargin = {
+    margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,
+  };
+
   return (
-    <p className="marker" style={styles}>
-      {content}
-    </p>
+    <div style={parentMargin}>
+      <p className="marker" style={styles}>
+        {content}
+      </p>
+    </div>
   );
 };
 

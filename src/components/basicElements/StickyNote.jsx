@@ -9,14 +9,20 @@ const StickyNote = ({ text, tilt, margin }) => {
     transform: `rotate(${tilt}deg)`,
   };
 
+  const parentMargin = {
+    margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,
+  };
+
   return (
-    <Draggable>
-      <div>
-        <div className="stickyNote" style={styles}>
-          {text}
+    <div style={parentMargin}>
+      <Draggable>
+        <div>
+          <div className="stickyNote" style={styles}>
+            {text}
+          </div>
         </div>
-      </div>
-    </Draggable>
+      </Draggable>
+    </div>
   );
 };
 
