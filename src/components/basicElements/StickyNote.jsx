@@ -1,7 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-const StickyNote = ({ text, tilt, margin }) => {
+const StickyNote = ({ text, tilt, margin, setIndex }) => {
   !margin && (margin = [0, 0, 0, 0]);
   !tilt && (tilt = 0);
 
@@ -17,7 +17,13 @@ const StickyNote = ({ text, tilt, margin }) => {
     <div style={parentMargin}>
       <Draggable>
         <div>
-          <div className="stickyNote" style={styles}>
+          <div
+            className="stickyNote"
+            style={styles}
+            onMouseDown={(e) => {
+              setIndex(e.target.className);
+            }}
+          >
             {text}
           </div>
         </div>

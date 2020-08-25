@@ -105,6 +105,13 @@ body {
   justify-content: center;
   flex-direction: column;
 
+  pointer-events: all !important;
+
+  > * {
+    pointer-events: none;
+    z-index: 0;
+  }
+
   @media screen and (min-width: 680px) {
     background: linear-gradient(225deg, transparent 50%, rgba(0, 0, 0, 0.2) 50%),
       linear-gradient(45deg, #e6f080, #e6f080),
@@ -137,6 +144,8 @@ body {
 
   box-sizing: border-box;
 
+  pointer-events: all !important;
+
   .instantPhotoImageWrapper {
     padding: 7% 5% 5% 5%;
     width: 90%;
@@ -147,6 +156,9 @@ body {
       height: 100%;
       background-color: #383838;
     }
+  }
+  * {
+    pointer-events: none;
   }
 
   @media screen and (max-width: 680px) {
@@ -174,9 +186,16 @@ body {
   flex-direction: column;
   overflow: hidden;
 
+  pointer-events: all !important;
+
   img {
     width: 100%;
     height: auto;
+  }
+
+  * {
+    pointer-events: none;
+    z-index: 0;
   }
 
   @media screen and (min-width: 680px) {
@@ -204,4 +223,6 @@ body {
   color: rgba(255, 255, 255, 0.75);
 
   transform: rotate(7deg);
+
+  z-index: -1;
 }
