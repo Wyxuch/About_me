@@ -48,6 +48,7 @@ const App = () => {
       </div>
       <div className="flexWrapper">
         <Board margin={[0, 0, 0, -52]} />
+
         <EmptyPage tilt={-12} margin={[130, 0, 0, 152]}>
           <p>{constants.about}</p>
         </EmptyPage>
@@ -59,16 +60,40 @@ const App = () => {
         </div>
       </div>
       <div className="flexWrapper">
-        <InstantPhoto tilt={20}></InstantPhoto>
-        <InstantPhoto tilt={8}></InstantPhoto>
-        <InstantPhoto tilt={-2}></InstantPhoto>
-        <InstantPhoto tilt={9}></InstantPhoto>
+        <InstantPhoto tilt={20}>
+          <img src="./img/logoHtml.png" alt="HTML5" />
+          HTML5
+        </InstantPhoto>
+        <InstantPhoto tilt={8}>
+          <img src="./img/logoSass.png" alt="Sass" />
+          Sass
+        </InstantPhoto>
+        <InstantPhoto tilt={-2}>
+          <img src="./img/logoReact.png" alt="React" />
+          React
+        </InstantPhoto>
+        <InstantPhoto tilt={9}>
+          <img src="./img/logoRedux.png" alt="Redux" />
+          Redux
+        </InstantPhoto>
       </div>
       <div className="flexWrapper">
-        <InstantPhoto tilt={-10}></InstantPhoto>
-        <InstantPhoto tilt={3}></InstantPhoto>
-        <InstantPhoto tilt={-9}></InstantPhoto>
-        <InstantPhoto tilt={6}></InstantPhoto>
+        <InstantPhoto tilt={-10}>
+          <img src="./img/logoNode.png" alt="Node.js" />
+          Node.js
+        </InstantPhoto>
+        <InstantPhoto tilt={3}>
+          <img src="./img/logoExpress.png" alt="Express.js" />
+          Express.js
+        </InstantPhoto>
+        <InstantPhoto tilt={-9}>
+          <img src="./img/logoMongo.png" alt="MongoDB" />
+          MongoDB
+        </InstantPhoto>
+        <InstantPhoto tilt={6}>
+          <img src="./img/logoUbuntu.png" alt="Ubuntu Linux" />
+          Ubuntu
+        </InstantPhoto>
       </div>
     </div>
   );
