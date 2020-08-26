@@ -19,6 +19,7 @@
 
 html {
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 @media screen and (min-width: 300px) {
@@ -82,6 +83,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url("./background.jpg");
 }
+
+// WRAPPERS
 
 .flexWrapper {
   margin: 2%;
@@ -147,8 +150,8 @@ body {
   display: block;
   position: relative;
 
-  width: 20vw;
-  height: 31vw;
+  width: 19vw;
+  height: 30vw;
 
   background-color: #ffffff;
 
@@ -255,6 +258,129 @@ body {
   }
 }
 
+#postCard {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+
+  width: 43vw;
+  height: 30vw;
+
+  color: #18183d;
+
+  background-color: #ffffff;
+  box-shadow: -1px 1px 0px 0px rgba(0, 0, 0, 0.75);
+
+  transition: all 0.1s ease-in-out;
+
+  pointer-events: all !important;
+
+  &.postCardOutline {
+    background-image: linear-gradient(
+      45deg,
+      #ffffff 12.5%,
+      #c62827 12.5%,
+      #c62827 25%,
+      #ffffff 25%,
+      #ffffff 37.5%,
+      #1665c1 37.5%,
+      #1665c1 50%,
+      #ffffff 50%,
+      #ffffff 62.5%,
+      #c62827 62.5%,
+      #c62827 75%,
+      #ffffff 75%,
+      #ffffff 87.5%,
+      #1665c1 87.5%,
+      #1665c1 100%
+    );
+    background-size: 116px 116px;
+  }
+
+  .postCardForm {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+
+    width: 96%;
+    height: 95%;
+
+    #message {
+      margin: auto 2%;
+
+      width: 90%;
+      height: 90%;
+
+      resize: none;
+
+      background-color: #ffffff;
+
+      font-family: sans-serif;
+
+      border: 1px solid #c62827;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    .stampHolder {
+      border: 1px solid #c62827;
+      height: 38%;
+      width: 40%;
+      margin-left: 50%;
+      margin-top: -13%;
+    }
+
+    input {
+      border: 0;
+      border-bottom: 1px solid #c62827;
+
+      background-color: #ffffff;
+
+      font-family: handWriting, sans-serif;
+      font-size: calc(
+        16px + (24 - 16) * (100vw - 600px) / (800 - 300)
+      ) !important;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    .buttonGroup {
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        font-weight: bold;
+        display: block;
+      }
+
+      #reset {
+        color: #c62827;
+        border: 0;
+        transition: all 0.1s ease-in-out;
+        &:hover {
+          transform: scale(1.3);
+        }
+      }
+      #submit {
+        color: #035a00;
+        border: 0;
+        transition: all 0.1s ease-in-out;
+        &:hover {
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
+}
+
 .dice {
   pointer-events: all !important;
   transition: all 0.1s ease-in-out;
@@ -311,4 +437,10 @@ body {
   color: rgba(255, 255, 255, 0.75);
 
   z-index: -1;
+}
+
+#footer {
+  color: #ffffff;
+  text-align: right;
+  margin: 20px;
 }

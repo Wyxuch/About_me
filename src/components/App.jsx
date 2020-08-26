@@ -9,6 +9,7 @@ import Marker from "../containers/basicElements/Marker";
 import Dice from "../containers/basicElements/Dice";
 import Arrow from "../containers/basicElements/Arrow";
 import Board from "../containers/basicElements/Board";
+import PostCard from "../containers/basicElements/PostCard";
 import constants from "../constats";
 
 const App = () => {
@@ -48,7 +49,6 @@ const App = () => {
       </div>
       <div className="flexWrapper">
         <Board margin={[0, 0, 0, -52]} />
-
         <EmptyPage tilt={-12} margin={[130, 0, 0, 152]}>
           <p>{constants.about}</p>
         </EmptyPage>
@@ -95,6 +95,26 @@ const App = () => {
           Ubuntu
         </InstantPhoto>
       </div>
+      <div className="flexWrapper">
+        <div className="flexWrapperVertical">
+          <Marker>
+            If You have any questions or want to say "hi", send me a message :)
+          </Marker>
+          <Arrow margin={[-70, 0, 0, 540]} tilt={70} />
+        </div>
+        <PostCard tilt={3} margin={[30, 0, 0, 0]} />
+      </div>
+      <div className="flexWrapper">
+        <PostCard />
+        <div className="flexWrapperVertical">
+          <Marker>Or maybe You came here to play snake</Marker>
+          <Arrow margin={[0, 0, -90, 0]} tilt={-120} />
+        </div>
+      </div>
+      <p id="footer">
+        All work © Jarosław Kowalczyk 2020 • All rights reserved • Made using
+        Redux
+      </p>
     </div>
   );
 };
