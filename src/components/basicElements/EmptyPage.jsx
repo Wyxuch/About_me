@@ -23,6 +23,9 @@ const EmptyPage = ({ content, tilt, margin, setIndex }) => {
             onMouseDown={(e) => {
               setIndex(e.target.className);
             }}
+            onTouchStartCapture={(e) => {
+              setIndex(e.target.className);
+            }}
           >
             {content}
           </div>

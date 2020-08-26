@@ -16,6 +16,7 @@ const store = (state = initialState, action) => {
 export default store;
 
 const updateIndex = (state, action) => {
+  console.log("update");
   const nextState = { ...state };
   const classes = action.classList.split(" ");
   classes.forEach((el) => {

@@ -23,6 +23,9 @@ const StickyNote = ({ text, tilt, margin, setIndex }) => {
             onMouseDown={(e) => {
               setIndex(e.target.className);
             }}
+            onTouchStartCapture={(e) => {
+              setIndex(e.target.className);
+            }}
           >
             {text}
           </div>

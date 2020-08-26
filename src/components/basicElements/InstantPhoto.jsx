@@ -1,7 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-const InstantPhoto = ({ image, text, tilt, margin }) => {
+const InstantPhoto = ({ image, text, tilt, margin, setIndex }) => {
   !margin && (margin = [0, 0, 0, 0]);
   !tilt && (tilt = 0);
 
@@ -17,7 +17,16 @@ const InstantPhoto = ({ image, text, tilt, margin }) => {
     <div style={parentMargin} className="elementWrapper">
       <Draggable>
         <div>
-          <div className="instantPhoto" style={styles}>
+          <div
+            className="instantPhoto"
+            style={styles}
+            onMouseDown={(e) => {
+              setIndex(e.target.className);
+            }}
+            onTouchStartCapture={(e) => {
+              setIndex(e.target.className);
+            }}
+          >
             <div className="instantPhotoImageWrapper">
               <div className="instantPhotoImage"></div>
             </div>
