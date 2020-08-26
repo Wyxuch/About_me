@@ -20,17 +20,24 @@ const Board = ({ tilt, margin }) => {
         className="boardImg"
         style={styles}
       ></img>
-      <a>
+      <a
+        href="https://www.linkedin.com/in/jaros%C5%82aw-kowalczyk-66a877190/"
+        target="_blank"
+      >
         <img
           src="./img/logoLiIn.png"
           className="logo linkedIn"
           alt="linkedIn logo"
         />
+      </a>
+      <a>
         <img
           src="./img/logoGmail.svg"
           className="logo gmail"
           alt="Gmail logo"
         />
+      </a>
+      <a href="https://github.com/Wyxuch" target="_blank">
         <img
           src="./img/logoGithub.png"
           className="logo github"
