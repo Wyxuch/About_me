@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="67.029mm" height="66.628mm" version="1.1" viewBox="0 0 67.029 66.628" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <clipPath id="clipPath149">
+   <rect x="262.84" y="554.84" width="256.26" height="252.15" fill="#250" fill-opacity=".93173" stroke-opacity="0"/>
+  </clipPath>
+  <clipPath id="clipPath153">
+   <rect x="69.543" y="146.8" width="67.801" height="66.714" fill="#250" fill-opacity=".93173" stroke-opacity="0"/>
+  </clipPath>
+  <clipPath id="clipPath157">
+   <rect x="69.543" y="146.8" width="67.801" height="66.714" fill="#250" fill-opacity=".93173" stroke-opacity="0"/>
+  </clipPath>
+  <clipPath id="clipPath161">
+   <rect x="69.543" y="146.8" width="67.801" height="66.714" fill="#250" fill-opacity=".93173" stroke-opacity="0"/>
+  </clipPath>
+  <clipPath id="clipPath165">
+   <rect x="69.543" y="146.8" width="67.801" height="66.714" fill="#250" fill-opacity=".93173" stroke-opacity="0"/>
+  </clipPath>
+  <clipPath id="clipPath169">
+   <rect x="69.543" y="146.8" width="67.801" height="66.714" fill="#250" fill-opacity=".93173" stroke-opacity="0"/>
+  </clipPath>
+  <clipPath id="clipPath173">
+   <rect x="69.543" y="146.8" width="67.801" height="66.714" fill="#250" fill-opacity=".93173" stroke-opacity="0"/>
+  </clipPath>
+  <clipPath id="clipPath177">
+   <rect x="69.543" y="146.8" width="67.801" height="66.714" fill="#250" fill-opacity=".93173" stroke-opacity="0"/>
+  </clipPath>
+  <clipPath id="clipPath181">
+   <rect x="69.543" y="146.8" width="67.801" height="66.714" fill="#250" fill-opacity=".93173" stroke-opacity="0"/>
+  </clipPath>
+  <clipPath id="clipPath185">
+   <rect x="69.543" y="146.8" width="67.801" height="66.714" fill="#250" fill-opacity=".93173" stroke-opacity="0"/>
+  </clipPath>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-68.937 -146.12)">
+  <path d="m47.574 124.28h87.932v87.932h-87.932z" clip-path="url(#clipPath185)" fill="none" stroke="#000" stroke-width=".26458px"/>
+  <rect x="63.655" y="140.44" width="55.513" height="55.513" clip-path="url(#clipPath181)" fill-opacity=".93173" stroke-opacity="0"/>
+  <g fill="none" stroke="#000" stroke-width=".26458px">
+   <path d="m119.17 212.23v-16.278h16.27" clip-path="url(#clipPath177)"/>
+   <path d="m102.9 212.23v-16.278h16.27" clip-path="url(#clipPath173)"/>
+   <path d="m86.628 212.23v-16.278h16.27" clip-path="url(#clipPath169)"/>
+   <path d="m70.357 212.23v-16.278h16.27" clip-path="url(#clipPath165)"/>
+   <path d="m119.17 195.96v-16.278h16.27" clip-path="url(#clipPath161)"/>
+   <path d="m119.17 179.68v-16.278h16.27" clip-path="url(#clipPath157)"/>
+   <path d="m119.17 163.4v-16.278h16.27" clip-path="url(#clipPath153)"/>
+  </g>
+  <path transform="scale(.26458)" d="m241 635.51 3e-5 -104.68 208.85-5e-5 -0.17342 104.42c-0.0954 57.434-0.20901 104.46-0.25254 104.5-0.0435 0.0438-46.957 0.15742-104.25 0.25254l-104.17 0.17295z" clip-path="url(#clipPath149)" fill="#250" fill-opacity=".93173" stroke-opacity="0"/>
+  <path transform="scale(.26458)" d="m263.22 647.38v-92.443h186.54l-0.33005 92.002c-0.18152 50.601-0.46534 92.137-0.6307 92.303-0.16536 0.1654-41.988 0.36396-92.94 0.44123l-92.64 0.14049z" fill="#28a745" fill-opacity=".93173" stroke-opacity="0"/>
+  <g fill="#ffd556" fill-opacity=".93173" stroke-opacity="0">
+   <path transform="scale(.26458)" d="m389.49 771.36v-30.052h60.104v60.104h-60.104z"/>
+   <path transform="scale(.26458)" d="m266.76 771.36v-30.052h60.104v60.104h-60.104z"/>
+   <path transform="scale(.26458)" d="m451.11 709.74v-30.052h60.104v60.104h-60.104z"/>
+  </g>
+  <g fill="#b1bb4c" fill-opacity=".93173" stroke-opacity="0">
+   <path transform="scale(.26458)" d="m451.11 587.01v-30.052h60.104v60.104h-60.104z"/>
+   <path transform="scale(.26458)" d="m389.49 771.36v-30.052h60.104v60.104h-60.104z"/>
+   <path transform="scale(.26458)" d="m266.76 771.36v-30.052h60.104v60.104h-60.104z"/>
+   <path transform="scale(.26458)" d="m451.11 709.74v-30.052h60.104v60.104h-60.104z"/>
+   <path transform="scale(.26458)" d="m451.11 587.01v-30.052h60.104v60.104h-60.104z"/>
+  </g>
+  <g fill-opacity=".93173" stroke-opacity="0">
+   <path transform="scale(.26458)" d="m263.22 647.25v-92.32h186.41l-0.28133 69.574c-0.15473 38.266-0.41658 79.626-0.5819 91.912l-0.30056 22.338-1.5821 0.24873c-0.87014 0.1368-42.55 0.32036-92.622 0.40792l-91.04 0.1592z" fill="#228c3a"/>
+   <path transform="scale(.26458)" d="m451.11 771.36v-30.052h60.104v60.104h-60.104z" fill="#86cfda"/>
+   <path transform="scale(.26458)" d="m451.11 648.12v-30.052h60.104v60.104h-60.104z" fill="#e77681"/>
+   <path transform="scale(.26458)" d="m328.38 771.36v-30.052h59.599v60.104h-59.599z" fill="#dfdfdf"/>
+  </g>
+  <g fill="#4849af" fill-opacity=".93173" stroke="#000" stroke-width=".165">
+   <rect x="70.389" y="195.96" width="16.238" height="4.363"/>
+   <rect x="102.9" y="195.96" width="16.238" height="4.363"/>
+   <rect transform="rotate(-90)" x="-195.92" y="119.17" width="16.238" height="4.363"/>
+   <rect transform="rotate(-90)" x="-163.36" y="119.17" width="16.238" height="4.363"/>
+  </g>
+ </g>
+</svg>
