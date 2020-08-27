@@ -23,12 +23,12 @@ const App = () => {
   return (
     <div>
       <div className="flexWrapper">
-        <EmptyPage tilt={2} margin={[0, 0, 0, 0]}>
+        <EmptyPage tilt={2} margin={[0, 0, 0, 0]} side={"left"}>
           <h1>{constants.greetings}</h1>
           <img alt="Greetings" src="./img/header_img2.jpg"></img>
         </EmptyPage>
         <div className="flexWrapperVertical">
-          <StickyNote tilt={-8} margin={[0, 0, 0, 4]}>
+          <StickyNote tilt={-8} margin={[0, 0, 0, 4]} side={"upper"}>
             <h1>{constants.position}</h1>
           </StickyNote>
           <Arrow margin={[20, 0, -15, 25]} />
@@ -36,7 +36,7 @@ const App = () => {
         </div>
         <div className="flexWrapperVertical">
           <Dice tilt={-12} margin={[0, 0, 0, 25]} />
-          <StickyNote tilt={20} margin={[25, 0, 0, 0]}>
+          <StickyNote tilt={20} margin={[25, 0, 0, 0]} side={"right"}>
             <h1>{constants.hello}</h1>
           </StickyNote>
         </div>
@@ -45,7 +45,7 @@ const App = () => {
       <div className="flexWrapper">
         <Board margin={[10, 0, 0, -42]} />
         <Dice tilt={-62} margin={[5, 0, 0, 0]} />
-        <EmptyPage tilt={-2} margin={[10, 0, 0, 1]}>
+        <EmptyPage tilt={-2} margin={[10, 0, 0, 1]} side={"right"}>
           <p>{constants.about}</p>
         </EmptyPage>
       </div>
@@ -61,38 +61,38 @@ const App = () => {
       </div>
 
       <div className="flexWrapper">
-        <InstantPhoto tilt={20}>
+        <InstantPhoto tilt={20} side={"left"}>
           <img src="./img/logoHtml.png" alt="HTML5" />
           HTML5
         </InstantPhoto>
-        <InstantPhoto tilt={8}>
+        <InstantPhoto tilt={8} side={"left"}>
           <img src="./img/logoSass.png" alt="Sass" />
           Sass
         </InstantPhoto>
-        <InstantPhoto tilt={-2}>
+        <InstantPhoto tilt={-2} side={"right"}>
           <img src="./img/logoReact.png" alt="React" />
           React
         </InstantPhoto>
-        <InstantPhoto tilt={9}>
+        <InstantPhoto tilt={9} side={"right"}>
           <img src="./img/logoRedux.png" alt="Redux" />
           Redux
         </InstantPhoto>
       </div>
 
       <div className="flexWrapper">
-        <InstantPhoto tilt={-10}>
+        <InstantPhoto tilt={-10} side={"left"}>
           <img src="./img/logoNode.png" alt="Node.js" />
           Node.js
         </InstantPhoto>
-        <InstantPhoto tilt={3}>
+        <InstantPhoto tilt={3} side={"left"}>
           <img src="./img/logoExpress.png" alt="Express.js" />
           Express.js
         </InstantPhoto>
-        <InstantPhoto tilt={-9}>
+        <InstantPhoto tilt={-9} side={"right"}>
           <img src="./img/logoMongo.png" alt="MongoDB" />
           MongoDB
         </InstantPhoto>
-        <InstantPhoto tilt={6}>
+        <InstantPhoto tilt={6} side={"right"}>
           <img src="./img/logoUbuntu.png" alt="Ubuntu Linux" />
           Ubuntu
         </InstantPhoto>
@@ -112,7 +112,7 @@ const App = () => {
         <div className="flexWrapperVertical">
           <Marker margin={[-1, 0, 0, 0]}>
             Or maybe You came here just to play snake? Good luck and have fun!!!
-            <p>(high score will be saved for others to beat)</p>
+            (high score will be saved for others to beat)
           </Marker>
           <Arrow
             margin={[-3, 0, 0, 0]}

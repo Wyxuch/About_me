@@ -19,6 +19,8 @@ const store = (state = initialState, action) => {
       return startSnake(state, action);
     case "RESTART_SNAKE":
       return restartSnake(state, action);
+    case "FORM_SUBMIT":
+      return formSubmit(state, action);
 
     default:
       return state;
@@ -70,6 +72,8 @@ const initIndex = (state, action) => {
 
   return nextState;
 };
+
+// ***SNAKE_GAME***
 
 const startSnake = (state, action) => {
   const nextState = { ...state };
@@ -250,4 +254,14 @@ const restartSnake = (state, action) => {
   }, 1000);
 
   return nextState;
+};
+
+// ***FORM SUBMIT***
+
+const formSubmit = (state, action) => {
+  const newState = { ...state };
+
+  console.log(action.e);
+
+  return newState;
 };

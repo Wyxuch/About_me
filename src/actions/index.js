@@ -15,3 +15,8 @@ export const startSnake = () => ({
 export const restartSnake = () => ({
   type: "RESTART_SNAKE",
 });
+
+export const handleSubmit = (e) => ({
+  type: "FORM_SUBMIT",
+  e,
+});

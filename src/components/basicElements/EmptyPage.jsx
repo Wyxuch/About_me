@@ -1,7 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-const EmptyPage = ({ content, tilt, margin, setIndex }) => {
+const EmptyPage = ({ content, tilt, margin, side, setIndex }) => {
   !margin && (margin = [0, 0, 0, 0]);
   !tilt && (tilt = 0);
 
@@ -18,7 +18,7 @@ const EmptyPage = ({ content, tilt, margin, setIndex }) => {
       <Draggable>
         <div>
           <div
-            className="emptyPage"
+            className={`emptyPage animation_trigger_${side}`}
             style={styles}
             onMouseDown={(e) => {
               setIndex(e.target.className);

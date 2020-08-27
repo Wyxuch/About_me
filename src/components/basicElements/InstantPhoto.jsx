@@ -1,7 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-const InstantPhoto = ({ image, text, content, tilt, margin, setIndex }) => {
+const InstantPhoto = ({ image, text, side, tilt, margin, setIndex }) => {
   !margin && (margin = [0, 0, 0, 0]);
   !tilt && (tilt = 0);
 
@@ -18,7 +18,7 @@ const InstantPhoto = ({ image, text, content, tilt, margin, setIndex }) => {
       <Draggable>
         <div>
           <div
-            className="instantPhoto"
+            className={`instantPhoto animation_trigger_${side}`}
             style={styles}
             onMouseDown={(e) => {
               setIndex(e.target.className);
