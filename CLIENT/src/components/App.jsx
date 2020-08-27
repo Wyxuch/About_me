@@ -104,8 +104,11 @@ const App = () => {
       <div className="flexWrapper">
         <Handheld tilt={0} margin={[0, 0, 0, 0]} />
         <div className="flexWrapperVertical">
-          <Marker>Or maybe You came here to play snake</Marker>
-          <Arrow margin={[0, 0, -90, 0]} tilt={-120} />
+          <Marker margin={[-70, 0, 0, 0]}>
+            Or maybe You came here just to play snake? Good luck and have fun!!!
+            <p>(high score will be saved for others to beat)</p>
+          </Marker>
+          <Arrow margin={[-50, 0, 0, 0]} tilt={-100} />
         </div>
       </div>
       <p id="footer">
