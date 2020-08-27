@@ -7,3 +7,11 @@ export const initZIndex = (collection) => ({
   type: "INIT_Z_INDEX",
   collection,
 });
+
+export const startSnake = () => ({
+  type: "START_SNAKE",
+});
+
+export const restartSnake = () => ({
+  type: "RESTART_SNAKE",
+});

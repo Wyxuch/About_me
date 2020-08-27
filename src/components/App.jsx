@@ -11,13 +11,10 @@ import Arrow from "../containers/basicElements/Arrow";
 import Board from "../containers/basicElements/Board";
 import PostCard from "../containers/basicElements/PostCard";
 import constants from "../constats";
+import Handheld from "../containers/basicElements/Handheld";
 
 const App = () => {
   const dispatch = useDispatch();
-
-  document.addEventListener("click", (e) => {
-    console.log(e.target);
-  });
 
   window.addEventListener("DOMContentLoaded", (event) => {
     dispatch(initZIndex(document.getElementsByClassName("react-draggable")));
@@ -105,7 +102,7 @@ const App = () => {
         <PostCard tilt={3} margin={[30, 0, 0, 0]} />
       </div>
       <div className="flexWrapper">
-        <PostCard />
+        <Handheld tilt={0} margin={[0, 0, 0, 0]} />
         <div className="flexWrapperVertical">
           <Marker>Or maybe You came here to play snake</Marker>
           <Arrow margin={[0, 0, -90, 0]} tilt={-120} />
