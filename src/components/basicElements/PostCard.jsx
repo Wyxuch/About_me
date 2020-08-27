@@ -31,6 +31,7 @@ class PostCard extends React.Component {
       message: this.state.message,
       subject: this.state.subject,
       email: this.state.email,
+      name: this.state.name,
     });
 
     this.animateRef.current.classList.add(`animation_trigger`);
@@ -79,6 +80,13 @@ class PostCard extends React.Component {
                   name="subject"
                   id="subject"
                   placeholder="Subject"
+                  onChange={this.handleChange}
+                />
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Name"
                   onChange={this.handleChange}
                 />
                 <input

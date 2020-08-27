@@ -1,9 +1,13 @@
 import express from "express";
 import morgan from "morgan";
 import nodemailer from "nodemailer";
+import smtpTransport from "nodemailer-smtp-transport";
 import path from "path";
 import mustacheExpress from "mustache-express";
 import cookieParser from "cookie-parser";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const PORT = process.env.PORT || 5000;
 
@@ -28,18 +32,16 @@ app
 const sendToMeRouter = express.Router();
 
 const transport = {
-  //all of the configuration for making a site send an email.
-
   host: "smtp.gmail.com",
   port: 587,
   secure: false,
   auth: {
-    user: process.env.THE_EMAIL,
-    pass: process.env.THE_PASSWORD,
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD,
   },
 };
 
-const transporter = nodemailer.createTransport(transport);
+const transporter = nodemailer.createTransport(smtpTransport(transport));
 transporter.verify((error, success) => {
   if (error) {
     console.error(error);
@@ -51,8 +53,8 @@ transporter.verify((error, success) => {
 sendToMeRouter.post("/", (req, res, next) => {
   //make mailable object
   const mail = {
-    from: process.env.THE_EMAIL,
-    to: "your.email@gmail.com",
+    from: process.env.EMAIL,
+    to: process.env.EMAIL,
     subject: req.body.subject,
     text: `
       from:
@@ -77,6 +79,6 @@ sendToMeRouter.post("/", (req, res, next) => {
   });
 });
 
-app.use(sendToMeRouter);
+app.use("/sendmail", sendToMeRouter);
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));

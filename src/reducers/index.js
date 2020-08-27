@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const initialState = {
   zIndexList: {},
   snake: [
@@ -261,7 +263,17 @@ const restartSnake = (state, action) => {
 const formSubmit = (state, action) => {
   const newState = { ...state };
 
-  console.log(action.e);
+  const email = action.e.email;
+  const name = action.e.name;
+  const subject = action.e.subject;
+  const message = action.e.message;
+
+  axios.post("/sendmail", {
+    email,
+    name,
+    subject,
+    message: message,
+  });
 
   return newState;
 };
