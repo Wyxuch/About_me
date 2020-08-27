@@ -144,7 +144,7 @@ const startSnake = (state, action) => {
     food_x = random_food(0, canvas.width - 5);
     food_y = random_food(0, canvas.height - 5);
     state.snake.forEach(function has_snake_eaten_food(part) {
-      const has_eaten = part.x == food_x && part.y == food_y;
+      const has_eaten = part.x === food_x && part.y === food_y;
       if (has_eaten) gen_food();
     });
   }
