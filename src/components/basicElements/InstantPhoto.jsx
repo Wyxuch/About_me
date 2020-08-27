@@ -10,7 +10,7 @@ const InstantPhoto = ({ image, text, content, tilt, margin, setIndex }) => {
   };
 
   const parentMargin = {
-    margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,
+    margin: `${margin[0]}% ${margin[1]}% ${margin[2]}% ${margin[3]}%`,
   };
 
   return (
