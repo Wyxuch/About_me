@@ -17,7 +17,7 @@ const PostCard = ({ tilt, margin }) => {
       <div className="postCardOutline" id="postCard" style={styles}>
         <form className="postCardForm">
           <textarea name="message" id="message" />
-          <div className="flexWrapperVertical">
+          <div className="flexWrapperVertical postCardRight">
             <div className="stampHolder"></div>
             <div>
               <input
