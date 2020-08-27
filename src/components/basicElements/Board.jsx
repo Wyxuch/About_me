@@ -23,6 +23,7 @@ const Board = ({ tilt, margin }) => {
       <a
         href="https://www.linkedin.com/in/jaros%C5%82aw-kowalczyk-66a877190/"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <img
           src="./img/logoLiIn.png"
@@ -30,14 +31,18 @@ const Board = ({ tilt, margin }) => {
           alt="linkedIn logo"
         />
       </a>
-      <a>
+      <a href="#postCard" rel="noopener noreferrer">
         <img
           src="./img/logoGmail.svg"
           className="logo gmail"
           alt="Gmail logo"
         />
       </a>
-      <a href="https://github.com/Wyxuch" target="_blank">
+      <a
+        href="https://github.com/Wyxuch"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <img
           src="./img/logoGithub.png"
           className="logo github"
