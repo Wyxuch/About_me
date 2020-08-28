@@ -1,10 +1,15 @@
 import { connect } from "react-redux";
-import { snakeScore } from "../../actions";
+import { saveScore, loadScore } from "../../actions";
 import Handheld from "../../components/basicElements/Handheld";
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   content: ownProps.children,
-  snakeScore: (score) => dispatch(snakeScore(score)),
+  saveScore: (score) => dispatch(saveScore(score)),
+  loadScore: () => dispatch(loadScore()),
 });
 
-export default connect(null, mapDispatchToProps)(Handheld);
+const mapStateToProps = (state) => {
+  return { highScore: state.highScore };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Handheld);

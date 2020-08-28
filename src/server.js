@@ -4,7 +4,9 @@ import nodemailer from "nodemailer";
 import smtpTransport from "nodemailer-smtp-transport";
 import path from "path";
 import mustacheExpress from "mustache-express";
+import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import fs from "fs";
 
 dotenv.config();
 
@@ -18,16 +20,16 @@ app
   .set("views", path.join(__dirname))
   .set("view engine", "html")
   .use(express.static(__dirname))
+  .use(bodyParser.urlencoded({ extended: false }))
+  .use(bodyParser.json())
 
   .use(logger)
-  .use(express.json())
-
-  .get("/", (req, res) => res.render("./index.html"))
-  .get("*", (req, res) => res.send("not found", 404));
+  .use(express.json());
 
 // mailer
 
 const sendToMeRouter = express.Router();
+const saveScore = express.Router();
 
 const transport = {
   host: "smtp.gmail.com",
@@ -77,6 +79,44 @@ sendToMeRouter.post("/", (req, res, next) => {
   });
 });
 
+// score
+
+saveScore.post("/", (req, res, next) => {
+  if (req.body.key === process.env.KEY) {
+    const score = {
+      score: req.body.score,
+    };
+
+    const json = JSON.stringify(score);
+
+    fs.writeFile("./score.json", json, "utf8", (err) => {
+      if (err) {
+        console.log(err);
+        next(err);
+      }
+    });
+  }
+});
+
+app.get("/loadsnakescore", (req, res) => {
+  fs.readFile("./score.json", (err, data) => {
+    if (err) {
+      res.json({
+        score: 0,
+      });
+    }
+    const jsonData = JSON.parse(data);
+    res.send({
+      score: jsonData.score,
+    });
+  });
+});
+
 app.use("/sendmail", sendToMeRouter);
+app.use("/updatesnakescore", saveScore);
+
+app
+  .get("/", (req, res) => res.render("./index.html"))
+  .get("*", (req, res) => res.status(404).send("not found"));
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));

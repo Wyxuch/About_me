@@ -10,6 +10,7 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
@@ -24,6 +25,8 @@
     "react-redux": "^7.2.1",
     "react-scripts": "3.4.3",
     "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
     "webpack": "4.42.0"
   },
   "scripts": {
@@ -32,8 +35,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-server": "babel ./src/server.js -d build",
-    "start-react": "react-scripts start",
-    "serve": "node dist/index.js"
+    "start-react": "react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"

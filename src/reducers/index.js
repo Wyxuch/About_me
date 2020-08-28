@@ -3,6 +3,7 @@ import axios from "axios";
 const initialState = {
   zIndexList: {},
   started: false,
+  highScore: 0,
 };
 
 const store = (state = initialState, action) => {
@@ -11,8 +12,10 @@ const store = (state = initialState, action) => {
       return updateIndex(state, action);
     case "INIT_Z_INDEX":
       return initIndex(state, action);
-    case "SNAKE_SCORE":
-      return snakeScore(state, action);
+    case "SAVE_SCORE":
+      return saveScore(state, action);
+    case "LOAD_SCORE_SUCCES":
+      return loadScore(state, action);
     case "FORM_SUBMIT":
       return formSubmit(state, action);
 
@@ -69,17 +72,22 @@ const initIndex = (state, action) => {
 
 // ***SNAKE_GAME***
 
-const snakeScore = (state, action) => {
+const saveScore = (state, action) => {
   const nextState = { ...state };
-
-  console.log(action);
 
   nextState.highScore = action.score;
 
   axios.post("/updatesnakescore", {
     score: action.score,
+    key: process.env.KEY,
   });
 
+  return nextState;
+};
+
+const loadScore = (state, action) => {
+  const nextState = { ...state };
+  nextState.highScore = action.response.data.score;
   return nextState;
 };
 

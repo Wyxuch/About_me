@@ -6,13 +6,17 @@ class Handheld extends React.Component {
     this.state = {
       margin: !props.margin ? [0, 0, 0, 0] : props.margin,
       tilt: !props.tilt ? 0 : props.tilt,
-      updateHighscore: props.snakeScore,
+      saveScore: props.saveScore,
+      loadScore: props.loadScore,
       score: 0,
-      highScore: 0,
+      highScore: props.highScore,
       inProgress: false,
     };
 
     this.startSnake = this.startSnake.bind(this);
+  }
+  componentDidMount() {
+    this.state.loadScore();
   }
 
   startSnake = () => {
@@ -70,7 +74,7 @@ class Handheld extends React.Component {
         this.setState({ inProgress: false });
         if (this.state.score > this.state.highScore) {
           this.setState({ highScore: this.state.score });
-          this.state.updateHighscore(this.state.score);
+          this.state.saveScore(this.state.score);
         }
         return;
       }
@@ -231,9 +235,12 @@ class Handheld extends React.Component {
             </div>
             <div className="buttonsWrapper">
               <p>High&nbsp;Score</p>
-              <div id="highScore" className="scoreDisplay">
-                {" "}
-                {this.state.highScore}
+              <div
+                id="highScore"
+                key={this.props.highScore}
+                className="scoreDisplay"
+              >
+                {this.props.highScore}
               </div>
             </div>
 
