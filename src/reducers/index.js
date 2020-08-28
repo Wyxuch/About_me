@@ -11,10 +11,8 @@ const store = (state = initialState, action) => {
       return updateIndex(state, action);
     case "INIT_Z_INDEX":
       return initIndex(state, action);
-    case "START_SNAKE":
-      return startSnake(state, action);
-    case "RESTART_SNAKE":
-      return restartSnake(state, action);
+    case "SNAKE_SCORE":
+      return snakeScore(state, action);
     case "FORM_SUBMIT":
       return formSubmit(state, action);
 
@@ -71,14 +69,16 @@ const initIndex = (state, action) => {
 
 // ***SNAKE_GAME***
 
-const startSnake = async (state, action) => {
+const snakeScore = (state, action) => {
   const nextState = { ...state };
 
-  return nextState;
-};
+  console.log(action);
 
-const restartSnake = (state, action) => {
-  const nextState = { ...state };
+  nextState.highScore = action.score;
+
+  axios.post("/updatesnakescore", {
+    score: action.score,
+  });
 
   return nextState;
 };
@@ -86,7 +86,7 @@ const restartSnake = (state, action) => {
 // ***FORM SUBMIT***
 
 const formSubmit = (state, action) => {
-  const newState = { ...state };
+  const nextState = { ...state };
 
   const email = action.e.email;
   const name = action.e.name;
@@ -100,5 +100,5 @@ const formSubmit = (state, action) => {
     message: message,
   });
 
-  return newState;
+  return nextState;
 };

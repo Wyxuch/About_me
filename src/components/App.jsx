@@ -108,7 +108,12 @@ const App = () => {
         <PostCard tilt={3} margin={[4, 0, 0, 0]} />
       </div>
       <div className="flexWrapper">
-        <Handheld tilt={0} margin={[5, 0, 0, 0]} />
+        <div className="flexWrapperVertical">
+          <Handheld tilt={0} margin={[5, 0, 0, 0]} />
+          <Marker margin={[-5, 0, 0, 10]}>
+            W-Up, S-Down, A-left, D-right{" "}
+          </Marker>
+        </div>
         <div className="flexWrapperVertical">
           <Marker margin={[-1, 0, 0, 0]}>
             Or maybe You came here just to play snake? Good luck and have fun!!!

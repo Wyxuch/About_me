@@ -6,14 +6,21 @@ class Handheld extends React.Component {
     this.state = {
       margin: !props.margin ? [0, 0, 0, 0] : props.margin,
       tilt: !props.tilt ? 0 : props.tilt,
+      updateHighscore: props.snakeScore,
       score: 0,
       highScore: 0,
+      inProgress: false,
     };
 
     this.startSnake = this.startSnake.bind(this);
   }
 
   startSnake = () => {
+    if (this.state.inProgress) return;
+    this.setState({ score: 0 });
+
+    this.setState({ inProgress: true });
+
     const snake = [
       { x: 100, y: 100 },
       { x: 95, y: 100 },
@@ -25,13 +32,18 @@ class Handheld extends React.Component {
     const canvas = document.getElementById("display");
     const ctx = canvas.getContext("2d");
 
+    document.getElementById("handheld").focus((e) => {
+      e.preventDefault();
+      document.body.focus({ preventScroll: true });
+    });
+
     canvas.width = 200;
     canvas.height = 200;
 
-    const LEFT_KEY = 37;
-    const RIGHT_KEY = 39;
-    const UP_KEY = 38;
-    const DOWN_KEY = 40;
+    const LEFT_KEY = "KeyA";
+    const RIGHT_KEY = "KeyD";
+    const UP_KEY = "KeyW";
+    const DOWN_KEY = "KeyS";
 
     const board_background = ctx.createLinearGradient(0, 0, 200, 200);
     board_background.addColorStop(0, "rgba(165,211,1,1)");
@@ -54,7 +66,14 @@ class Handheld extends React.Component {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const main = () => {
-      if (has_game_ended()) return;
+      if (has_game_ended()) {
+        this.setState({ inProgress: false });
+        if (this.state.score > this.state.highScore) {
+          this.setState({ highScore: this.state.score });
+          this.state.updateHighscore(this.state.score);
+        }
+        return;
+      }
 
       changing_direction = false;
       setTimeout(() => {
@@ -115,10 +134,10 @@ class Handheld extends React.Component {
       }
     };
 
-    const change_direction = (event) => {
+    const change_direction = (event, code) => {
       if (changing_direction) return;
       changing_direction = true;
-      const keyPressed = event.keyCode;
+      const keyPressed = event ? event.code : code;
       const goingUp = dy === -5;
       const goingDown = dy === 5;
       const goingRight = dx === 5;
@@ -153,7 +172,25 @@ class Handheld extends React.Component {
       }
     };
 
-    document.addEventListener("keydown", change_direction);
+    const leftConsoleKey = document.getElementById("leftButton");
+    const righttConsoleKey = document.getElementById("rightButton");
+    const upConsoleKey = document.getElementById("upButton");
+    const downConsoleKey = document.getElementById("downButton");
+
+    leftConsoleKey.addEventListener("click", (e) => {
+      change_direction(false, LEFT_KEY);
+    });
+    righttConsoleKey.addEventListener("click", (e) => {
+      change_direction(false, RIGHT_KEY);
+    });
+    upConsoleKey.addEventListener("click", (e) => {
+      change_direction(false, UP_KEY);
+    });
+    downConsoleKey.addEventListener("click", (e) => {
+      change_direction(false, DOWN_KEY);
+    });
+
+    document.addEventListener("keypress", change_direction);
 
     gen_food();
     main();
@@ -188,21 +225,22 @@ class Handheld extends React.Component {
           <div className="flexWrapperVertical">
             <div className="buttonsWrapper">
               <p>Score</p>
-              <div id="score" className="scoreDisplay"></div>
+              <div id="score" className="scoreDisplay">
+                {this.state.score}
+              </div>
             </div>
             <div className="buttonsWrapper">
               <p>High&nbsp;Score</p>
-              <div id="highScore" className="scoreDisplay"></div>
+              <div id="highScore" className="scoreDisplay">
+                {" "}
+                {this.state.highScore}
+              </div>
             </div>
 
             <div id="buttonsRight">
               <div className="buttonsWrapper">
                 <button id="startButton" onClick={this.startSnake} />
-                <p>Start</p>
-              </div>
-              <div className="buttonsWrapper">
-                <button id="resetButton" />
-                <p>Reset</p>
+                <p>Start/Restart</p>
               </div>
             </div>
           </div>

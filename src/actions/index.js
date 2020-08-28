@@ -8,12 +8,9 @@ export const initZIndex = (collection) => ({
   collection,
 });
 
-export const startSnake = () => ({
-  type: "START_SNAKE",
-});
-
-export const restartSnake = () => ({
-  type: "RESTART_SNAKE",
+export const snakeScore = (score) => ({
+  type: "SNAKE_SCORE",
+  score,
 });
 
 export const handleSubmit = (e) => ({
