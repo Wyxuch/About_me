@@ -77,11 +77,6 @@ const saveScore = (state, action) => {
 
   nextState.highScore = action.score;
 
-  axios.post("/updatesnakescore", {
-    score: action.score,
-    key: process.env.KEY,
-  });
-
   return nextState;
 };
 

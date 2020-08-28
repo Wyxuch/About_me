@@ -1,4 +1,6 @@
 import axios from "axios";
+import dotenv from "dotenv";
+dotenv.config();
 
 export const setZIndex = (classList) => ({
   type: "SET_Z_INDEX",
@@ -10,7 +12,24 @@ export const initZIndex = (collection) => ({
   collection,
 });
 
-export const saveScore = (score) => ({
+export const saveScore = (score) => {
+  return function action(dispatch) {
+    const request = axios({
+      method: "POST",
+      url: `/updatesnakescore`,
+      data: {
+        score: score,
+        key: process.env.REACT_APP_KEY,
+      },
+    });
+    return request.then(
+      (response) => dispatch(saveScoreToStore(score)),
+      (err) => dispatch(saveScoreToStore(score))
+    );
+  };
+};
+
+export const saveScoreToStore = (score) => ({
   type: "SAVE_SCORE",
   score,
 });

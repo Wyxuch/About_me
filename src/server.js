@@ -21,7 +21,6 @@ app
   .set("view engine", "html")
   .use(express.static(__dirname))
   .use(bodyParser.urlencoded({ extended: false }))
-  .use(bodyParser.json())
 
   .use(logger)
   .use(express.json());
@@ -91,8 +90,14 @@ saveScore.post("/", (req, res, next) => {
 
     fs.writeFile("./score.json", json, "utf8", (err) => {
       if (err) {
-        console.log(err);
+        res.json({
+          status: "fail",
+        });
         next(err);
+      } else {
+        res.json({
+          status: "succes",
+        });
       }
     });
   }
