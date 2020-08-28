@@ -6,6 +6,11 @@
 }
 
 @font-face {
+  font-family: display;
+  src: url("./public/PressStart2P-Regular.ttf");
+}
+
+@font-face {
   font-family: handWritingBold;
   src: url("./public/Caveat-Bold.ttf");
 }
@@ -659,10 +664,20 @@ body {
         #c0d185 39%,
         #a5d301 100%
       );
+
+      font-family: display;
+      text-align: center;
+
       border: 2px solid #000000;
       width: 7vw;
       height: 2vw;
+
+      padding: 0.1vw;
       margin-bottom: 0.8vw;
+    }
+    #startButton {
+      width: 3vw;
+      border-radius: 15%;
     }
   }
 
