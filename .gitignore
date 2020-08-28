@@ -12,6 +12,12 @@ npm-debug.log
 
 # production
 /build
+score.json
+
+server.crt
+server.csr
+server.key
+server.pass.key
 
 # misc
 .DS_Store
