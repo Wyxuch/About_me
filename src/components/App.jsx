@@ -53,7 +53,7 @@ const App = () => {
       <div className="flexWrapper">
         <div
           className="flexWrapperVertical"
-          style={{ marginLeft: "-20%", marginTop: "-10%" }}
+          style={{ marginLeft: "-30%", marginTop: "-10%" }}
         >
           <Marker>My Tech Stack</Marker>
           <Arrow tilt={180} />

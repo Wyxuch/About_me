@@ -4,7 +4,7 @@ const constants = {
   greetings: "I'm Jarek, nice to see you!",
   position: "Full Stack Web Developer",
   about:
-    "Bacon ipsum dolor amet short ribs ham landjaeger pork prosciutto flank chicken ground round jowl chislic strip steak ham hock pastrami. Burgdoggen picanha bacon shank cow chislic prosciutto pastrami doner capicola salami t-bone pig venison tenderloin. Jowl meatball pork belly ribeye, turducken kevin chuck t-bone flank sausage drumstick rump ball tip tenderloin. Capicola sirloin bacon beef, brisket short loin short ribs buffalo salami strip steak shank doner venison kielbasa boudin. Biltong cupim kevin ribeye. Ham hock landjaeger filet mignon, kevin buffalo brisket salami meatball pork belly meatloaf turkey ham pig. Pancetta kielbasa biltong frankfurter, filet mignon ground round beef sausage venison tenderloin andouille cupim. Doner porchetta meatloaf cow chislic sausage.",
+    "I'm an aspiring full-stack developer, most preferably working with node.js. My journey with programming started in middle school. I loved the possibility of creating almost everything like with Lego bricks but more complex. I'm very friendly and love to chat so the chance of showing my projects online and watch people play with them and have fun convinced me to become a web developer. Besides programming, I love travels, music, and Star Wars. \n\nFeel free to text me through the form below, I have experience with various projects from websites through the app-script project ending on solutions for clinics. \n\nCurrently, I'm looking for a cheerful team or project I can work on.",
 };
 
 export default constants;

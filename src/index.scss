@@ -295,6 +295,7 @@ body {
   p {
     margin: 2%;
     color: 2;
+    white-space: pre-line;
   }
 
   * {
@@ -343,8 +344,15 @@ body {
   }
 
   @media screen and (max-width: 680px) {
-    width: 32vw;
-    height: 47vw;
+    &.animation_trigger_left {
+      width: 31vw;
+      height: 48vw;
+    }
+    &.animation_trigger_right {
+      width: 45vw;
+      height: 65vw;
+      font-size: 10px;
+    }
   }
 }
 
@@ -443,10 +451,13 @@ body {
 
     .stampHolder {
       border: 1px solid #c62827;
-      height: 38%;
+      height: 30%;
       width: 40%;
       margin-left: 50%;
-      margin-top: -13%;
+      margin-top: -20%;
+      @media screen and (max-width: 680px) {
+        margin-top: -8%;
+      }
     }
 
     input {
