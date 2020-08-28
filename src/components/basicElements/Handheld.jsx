@@ -72,7 +72,7 @@ class Handheld extends React.Component {
     const main = () => {
       if (has_game_ended()) {
         this.setState({ inProgress: false });
-        if (this.state.score > this.state.highScore) {
+        if (this.state.score > this.props.highScore) {
           this.setState({ highScore: this.state.score });
           this.state.saveScore(this.state.score);
         }
