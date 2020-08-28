@@ -648,6 +648,22 @@ body {
       margin: 1px;
       font-size: 0.7rem;
     }
+
+    .scoreDisplay {
+      background: linear-gradient(
+        135deg,
+        #a5d301 0%,
+        #b5ce58 7%,
+        #bfd17f 23%,
+        #a5d301 32%,
+        #c0d185 39%,
+        #a5d301 100%
+      );
+      border: 2px solid #000000;
+      width: 7vw;
+      height: 2vw;
+      margin-bottom: 0.8vw;
+    }
   }
 
   #screen {
