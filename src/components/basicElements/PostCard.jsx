@@ -27,6 +27,14 @@ class PostCard extends React.Component {
   }
 
   handleSubmit() {
+    if (
+      !this.state.message.length ||
+      !this.state.subject.length ||
+      !this.state.name.length ||
+      !this.state.email.length
+    ) {
+      return;
+    }
     this.state.handleSubmit({
       message: this.state.message,
       subject: this.state.subject,
@@ -71,6 +79,7 @@ class PostCard extends React.Component {
               name="message"
               id="message"
               onChange={this.handleChange}
+              required
             />
             <div className="flexWrapperVertical postCardRight">
               <div className="stampHolder"></div>
@@ -81,6 +90,7 @@ class PostCard extends React.Component {
                   id="subject"
                   placeholder="Subject"
                   onChange={this.handleChange}
+                  required
                 />
                 <input
                   type="text"
@@ -88,6 +98,7 @@ class PostCard extends React.Component {
                   id="name"
                   placeholder="Name"
                   onChange={this.handleChange}
+                  required
                 />
                 <input
                   type="email"
@@ -95,6 +106,7 @@ class PostCard extends React.Component {
                   id="email"
                   placeholder="E-mail"
                   onChange={this.handleChange}
+                  required
                 />
               </div>
               <div className="buttonGroup">
