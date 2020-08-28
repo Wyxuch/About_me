@@ -4,7 +4,6 @@ import nodemailer from "nodemailer";
 import smtpTransport from "nodemailer-smtp-transport";
 import path from "path";
 import mustacheExpress from "mustache-express";
-import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -22,7 +21,6 @@ app
 
   .use(logger)
   .use(express.json())
-  .use(cookieParser())
 
   .get("/", (req, res) => res.render("./index.html"))
   .get("*", (req, res) => res.send("not found", 404));
