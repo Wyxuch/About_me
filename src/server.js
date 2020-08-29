@@ -121,6 +121,13 @@ app.use("/sendmail", sendToMeRouter);
 app.use("/updatesnakescore", saveScore);
 
 app
+  .get(
+    "/.well-known/acme-challenge/n2tkHK-yogsNXGcjxf226e3tIRpGt8Kb2rgpRaBKYDg",
+    (req, res) =>
+      res.render(
+        "./.well-known/acme-challenge/n2tkHK-yogsNXGcjxf226e3tIRpGt8Kb2rgpRaBKYDg"
+      )
+  )
   .get("/", (req, res) => res.render("./index.html"))
   .get("*", (req, res) => res.status(404).send("not found"));
 
