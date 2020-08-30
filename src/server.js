@@ -6,6 +6,7 @@ import path from "path";
 import mustacheExpress from "mustache-express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import sslRedirect from "heroku-ssl-redirect";
 import fs from "fs";
 
 dotenv.config();
@@ -21,9 +22,9 @@ app
   .set("view engine", "html")
   .use(express.static(__dirname))
   .use(bodyParser.urlencoded({ extended: false }))
-
   .use(logger)
-  .use(express.json());
+  .use(express.json())
+  .use(sslRedirect());
 
 // mailer
 
