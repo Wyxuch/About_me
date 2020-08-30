@@ -16,17 +16,7 @@ const PORT = process.env.PORT || 443;
 const app = express();
 const logger = morgan("dev");
 
-app
-  .engine("html", mustacheExpress())
-  .set("views", path.join(__dirname))
-  .set("view engine", "html")
-  .use(express.static(__dirname))
-  .use(bodyParser.urlencoded({ extended: false }))
-  .use(logger)
-  .use(express.json());
-
 // SSL
-// app.use(sslRedirect());
 
 app.get("*", function (req, res, next) {
   if (req.get("x-forwarded-proto") != "https") {
@@ -36,6 +26,15 @@ app.get("*", function (req, res, next) {
     next();
   }
 });
+
+app
+  .engine("html", mustacheExpress())
+  .set("views", path.join(__dirname))
+  .set("view engine", "html")
+  .use(express.static(__dirname))
+  .use(bodyParser.urlencoded({ extended: false }))
+  .use(logger)
+  .use(express.json());
 
 // mailer
 
