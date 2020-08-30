@@ -23,8 +23,18 @@ app
   .use(express.static(__dirname))
   .use(bodyParser.urlencoded({ extended: false }))
   .use(logger)
-  .use(express.json())
-  .use(sslRedirect());
+  .use(express.json());
+
+// SSL
+app.use(sslRedirect());
+app.enable("trust proxy");
+app.use(function (req, res, next) {
+  if (req.secure) {
+    next();
+  } else {
+    res.redirect("https://" + req.headers.host + req.url);
+  }
+});
 
 // mailer
 
