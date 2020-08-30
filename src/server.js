@@ -27,14 +27,16 @@ app
 
 // SSL
 app.use(sslRedirect());
-app.enable("trust proxy");
-app.use(function (req, res, next) {
-  if (req.secure) {
-    next();
-  } else {
-    res.redirect("https://" + req.headers.host + req.url);
+
+const ssRedirect = (req, res, next) => {
+  console.log(req.headers["x-forwarded-proto"]);
+  if (req.protocol !== "https") {
+    return res.redirect(["https://", req.get("Host"), req.url].join(""));
   }
-});
+  return next();
+};
+
+app.use(ssRedirect);
 
 // mailer
 
