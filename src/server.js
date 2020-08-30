@@ -78,10 +78,12 @@ sendToMeRouter.post("/", (req, res, next) => {
   };
   transporter.sendMail(mail, (err, data) => {
     if (err) {
+      console.log("fail - ", err);
       res.json({
         status: "fail",
       });
     } else {
+      console.log("succes");
       res.json({
         status: "success",
       });
