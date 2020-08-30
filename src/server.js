@@ -11,7 +11,7 @@ import fs from "fs";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 443;
 
 const app = express();
 const logger = morgan("dev");
