@@ -37,8 +37,6 @@ app.get("*", function (req, res, next) {
   }
 });
 
-app.use(ssRedirect);
-
 // mailer
 
 const sendToMeRouter = express.Router();
