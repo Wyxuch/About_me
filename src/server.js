@@ -26,15 +26,16 @@ app
   .use(express.json());
 
 // SSL
-app.use(sslRedirect());
+// app.use(sslRedirect());
 
-const ssRedirect = (req, res, next) => {
-  console.log(req.headers["x-forwarded-proto"]);
-  if (req.protocol !== "https") {
-    return res.redirect(["https://", req.get("Host"), req.url].join(""));
+app.get("*", function (req, res, next) {
+  if (req.get("x-forwarded-proto") != "https") {
+    res.set("x-forwarded-proto", "https");
+    res.redirect("https://" + req.get("host") + req.url);
+  } else {
+    next();
   }
-  return next();
-};
+});
 
 app.use(ssRedirect);
 
